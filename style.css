@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #2c3e50;
+    font-size: 62.5%;
+    font-family: 'Lato', sans-serif;
+    text-transform: capitalize;
+}
+.container{
+    width: 900px;
+    margin: 0 auto;
+}
+.card{
+    padding: 10px;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 50px;
+    word-spacing: 2px;
+    border-radius: 10px;
+    box-shadow: 1px 2px 14px 10px rgba(255,255,255,0.18);
+}
+.first{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+.second{
+    text-align: left;
+    font-size: 1.2rem;
+}
+.second p{
+    margin:5px 0px 5px 0px;
+}
+.second span{
+    border-bottom: 1px dotted #fff;
+    text-transform: capitalize;
+}
+
+.second .trainname,.result{
+    color: #e74c3c;
+}
+.second .date{
+    color: #bdc3c7;
+}
+.second .next{
+    color: #f1c40f;
+}
+.second .last{
+    color: #c0392b;
+}
+.second .destination{
+color: #2ecc71;
+}
+
+.format{
+    font-size: 1rem;
+    font-weight: 100;
+}
+.card p{
+    color: #fff;
+}
+.reset{
+    background: #FFC312;
+}
+input{
+    border: none;
+    padding: 6px;
+    background: #2c3e50;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    font-size: 1.3rem;
+    color: #fff;
+    outline: none;
+    width: 50%;
+
+}
+button{
+    border: none;
+    font-size: 1.3rem;
+    padding: 10px;
+    margin: 10px;
+    background: #2ecc71;
+    color: #fff;
+    border-radius: 5px;
+     cursor: pointer;
+     width: 30%;
+}
+.error{
+    color: red !important;
+    background: #fff;
+    font-size: 20px;
+}
+
+@media(max-width:800px){
+    .container,.card,input,button{
+        width: 100%;
+    }
+    button{
+        margin:5px 0px 5px 0px;
+    }
+    .card{
+        box-shadow: none;
+    }
+    .first{
+        text-align: left;
+    }
+
+}

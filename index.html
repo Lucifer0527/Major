@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100i,300,300i,400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Indain Railway</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="first">
+                    <p>Train Number</p>
+                    <input type="text" name="" id="number" placeholder="Train Number"><br>
+                    <p>Date &ensp;<span class="format">format(25-08-1996)</span></p>
+                    
+                    <input type="text" name="" id="date" placeholder="01-01-2000"><br>
+                    <button type="button" id="submit">Get Status</button>
+                    <button class="reset" type="button" id="reset">Reset</button>
+            </div>
+            <div class="second">
+                <p class="error" id="error"></p>
+                <p>Status:- <span class="result" id="result"></span></p>
+                <p>Train Name:- <span class="trainname" id="trainname"></span></p>
+                <p>Start Date:- <span class="date" id="startdate"></span></p>
+                <p>Last Station :-<span class="last" id="position"></span></p>
+                <p>Next Station :-<span class="next" id="nextstation"></span></p>
+                <p>Destination :-<span id="destination" class="destination"></span></p>
+            </div>
+           
+        </div>
+    </div>
+    
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
