@@ -7,7 +7,7 @@ let date=document.getElementById("date");
 function Fetchdata(){
 
     if(train.value.length==5){
-        console.log("clicked")
+        document.getElementById("error").innerHTML="";
         let url=`https://api.railwayapi.com/v2/live/train/${train.value}/date/${date.value}/apikey/${Myapi}/`;
         let request= new XMLHttpRequest();
         request.open('GET',url);
@@ -32,15 +32,15 @@ function Fetchdata(){
 function printdata(main){
     document.getElementById("result").innerText=main.position;
     document.getElementById("position").innerText=main.current_station.name;
-    console.log(main.route.length)
+    // console.log(main.route.length)
     document.getElementById("trainname").innerText=main.train.name;
     document.getElementById("startdate").innerText=main.start_date;
-    console.log(typeof main.start_date);
+    // console.log(typeof main.start_date);
     document.getElementById("destination").innerText=main.route[main.route.length-1].station.name;
     for (let i = 0; i < main.route.length; i++) {
         if(main.route[i].has_arrived==false && main.route.schdep !="Destination"){
-            console.log(main.route[i].station.name);
-            document.getElementById("nextstation").innerText=main.route[i].station.name;
+            // console.log(main.route[i].station.name);
+            document.getElementById("nextstation").innerText=main.route[i].station.name+" at "+main.route[i].actarr;
             break;
         }
     }
