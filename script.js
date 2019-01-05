@@ -2,13 +2,27 @@ const Myapi="i9yp7fr2y3";
 let train=document.getElementById("number");
 let date=document.getElementById("date"); 
 
+let Year="";
+let day="";
+let month="";
 
 
 function Fetchdata(){
-
+    let dateArray=date.value.split("");
+    for (let i = 0; i < 4; i++) {
+         Year=Year+dateArray[i];  
+    }
+    for (let i = 5; i < 7; i++) {
+        month=month+dateArray[i];
+    }
+    for (let i = 8; i <10; i++) {
+        day=day+dateArray[i];
+    }
+     let OringnalDate=day+"-"+month+"-"+Year;
+     console.log(OringnalDate);
     if(train.value.length==5){
         document.getElementById("error").innerHTML="";
-        let url=`https://api.railwayapi.com/v2/live/train/${train.value}/date/${date.value}/apikey/${Myapi}/`;
+        let url=`https://api.railwayapi.com/v2/live/train/${train.value}/date/${OringnalDate}/apikey/${Myapi}/`;
         let request= new XMLHttpRequest();
         request.open('GET',url);
         request.onreadystatechange=function(){
@@ -44,6 +58,9 @@ function printdata(main){
             break;
         }
     }
+    Year="";
+    day="";
+    month="";
    
 }
 function reset(){
@@ -53,7 +70,9 @@ function reset(){
     document.getElementById("position").innerText="";
     document.getElementById("destination").innerText="";
     document.getElementById("nextstation").innerText="";
-
+    let Year="";
+let day="";
+let month="";
 
 }
 document.getElementById("submit").addEventListener("click",Fetchdata);

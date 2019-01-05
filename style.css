@@ -89,6 +89,17 @@ button{
      cursor: pointer;
      width: 30%;
 }
+button:visited{
+    border: none;
+    font-size: 1.3rem;
+    padding: 10px;
+    margin: 10px;
+    background: #2ecc71;
+    color: #fff;
+    border-radius: 5px;
+     cursor: pointer;
+     width: 30%;
+}
 .error{
     color: red !important;
     background: #fff;
