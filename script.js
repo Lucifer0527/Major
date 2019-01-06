@@ -70,6 +70,8 @@ function reset(){
     document.getElementById("position").innerText="";
     document.getElementById("destination").innerText="";
     document.getElementById("nextstation").innerText="";
+    document.getElementById("trainname").innerText="";
+    document.getElementById("startdate").innerText="";
     let Year="";
 let day="";
 let month="";
