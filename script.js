@@ -1,6 +1,8 @@
-const Myapi="i9yp7fr2y3";
+const Myapi="vrhe8k2i6r";
 let train=document.getElementById("number");
 let date=document.getElementById("date"); 
+let stationCode=document.getElementById("code"); 
+console.log(stationCode)
 
 let Year="";
 let day="";
@@ -22,7 +24,7 @@ function Fetchdata(){
      console.log(OringnalDate);
     if(train.value.length==5){
         document.getElementById("error").innerHTML="";
-        let url=`https://api.railwayapi.com/v2/live/train/${train.value}/date/${OringnalDate}/apikey/${Myapi}/`;
+        let url=`https://api.railwayapi.com/v2/live/train/${train.value}/station/${stationCode.value}/date/${OringnalDate}/apikey/${Myapi}/`;
         let request= new XMLHttpRequest();
         request.open('GET',url);
         request.onreadystatechange=function(){
@@ -45,19 +47,14 @@ function Fetchdata(){
 
 function printdata(main){
     document.getElementById("result").innerText=main.position;
-    document.getElementById("position").innerText=main.current_station.name;
+    // document.getElementById("position").innerText=main.current_station.name;
     // console.log(main.route.length)
     document.getElementById("trainname").innerText=main.train.name;
     document.getElementById("startdate").innerText=main.start_date;
     // console.log(typeof main.start_date);
-    document.getElementById("destination").innerText=main.route[main.route.length-1].station.name;
-    for (let i = 0; i < main.route.length; i++) {
-        if(main.route[i].has_arrived==false && main.route.schdep !="Destination"){
-            // console.log(main.route[i].station.name);
-            document.getElementById("nextstation").innerText=main.route[i].station.name+" at "+main.route[i].actarr;
-            break;
-        }
-    }
+    document.getElementById("sd").innerText=main.status.schdep;
+    document.getElementById("sa").innerText=main.status.actarr;
+
     Year="";
     day="";
     month="";
